@@ -1,13 +1,16 @@
 pipeline {
-  agent any  
-  options {
-    buildDiscarder(logRotator(numToKeepStr: '5'))
-  }
-  
-stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
+  agent any
+
+  stages {
+    stage('Checkout') {
+      steps {
+        script {
+          // Check out the source code
+          checkout scm
+          // Print a message to the console
+          echo 'Source code checkout completed'
         }
+      }
     }
+  }
+}
