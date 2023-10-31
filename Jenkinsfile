@@ -4,9 +4,7 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   
-
-
-    stages {
+stages {
         stage('Checkout') {
             steps {
                 checkout scm
